@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Runtime Permissions</string>
+    <string name="write_to_file">write to file</string>
 </resources>
