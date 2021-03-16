@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.health.PackageHealthStats;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText mInput;
     private Button mWrite;
+    private Button mOpen2ndAc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,22 @@ public class MainActivity extends AppCompatActivity {
         mInput = findViewById(R.id.input);
         mWrite = findViewById(R.id.btn_write);
 
+        mOpen2ndAc = findViewById(R.id.btn_open2ndAct);
+
         mWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String textToWrite = mInput.getText().toString();
                 writeTOFileIfNotEmpty(textToWrite);
+            }
+        });
+
+        mOpen2ndAc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+                onBackPressed();
             }
         });
 
@@ -112,4 +125,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }

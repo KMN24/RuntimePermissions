@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Runtime Permissions</string>
     <string name="write_to_file">write to file</string>
+    <string name="open_2nd_activity">Open 2nd Activity</string>
 </resources>
